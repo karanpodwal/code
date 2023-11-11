@@ -1,0 +1,308 @@
+definitions:
+  securitySchemes:
+    tokenauth:
+      type: basic
+      description: bearer auth
+      name: Authorization
+      in: header
+    demouser:
+      type: basic
+  #-------------------------------------------------------------------
+  #---------------------------ADMIN----------------------------------
+  #-------------------------------------------------------------------
+
+
+  signup:
+    required:
+      - email
+      - mobileNumber
+      - firstName
+      - lastName
+      - countryCode
+      - password
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+      countryCode:
+        type: string
+      mobileNumber:
+        type: string
+      email:
+        type: string
+      address:
+        type: string
+      password:
+        type: string  
+      profilePic:
+        type: string
+      dateOfBirth:
+        type: string
+      
+  connectWallet:
+    required:
+      - walletAddress
+    properties:
+      walletAddress:
+        type: string
+
+  login:
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+      password: 
+        type: string
+
+
+  twoFALogin:
+    required:
+      - email
+      - password
+      - userToken
+    properties:
+      email:
+        type: string
+      password: 
+        type: string
+      userToken:
+        type: string 
+         
+
+  verifyOTP:
+    required:
+      - email
+      - otp
+    properties:
+      email:
+        type: string
+      otp:
+        type: string
+
+  resendOTP:
+    required:
+      - mobileNumber
+      - countryCode
+    properties:
+      mobileNumber:
+        type: string
+      countryCode:
+        type: string
+      
+
+  forgotPassword:
+    required:
+      - email
+    properties:
+      email:
+        type: string
+
+  resetPassword:
+    required:
+      - password
+      - confirmPassword
+    properties:
+      password:
+        type: string
+      confirmPassword:
+        type: string
+
+  resendOtp:
+    required:
+      - email
+    properties:
+      email:
+        type: string
+        
+
+ 
+  adminProfile:
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+      email:
+        type: string
+      countryCode:
+        type: string
+      mobileNumber:
+        type: string
+      password:
+        type: string
+      country:
+        type: string
+      state:
+        type: string
+      city:
+        type: string
+
+  socialLogin:
+    required:
+      - socialId
+      - socialType
+      - firstName
+      - mobileNumber
+    properties:
+      socialId:
+        type: string
+      socialType: 
+        type: string
+      deviceType:
+        type: string 
+      deviceToken:
+        type: string
+      firstName:
+        type: string
+      email: 
+        type: string
+      mobileNumber:
+        type: string     
+
+
+
+  editProfile:
+    properties:
+      email:
+        type: string
+      mobileNumber:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      countryCode:
+        type: string
+      address:
+        type: string
+      dateOfBirth:
+        type: string
+      profilePic:
+        type: string
+
+  addKyc:
+    required:
+      - backIdImage
+      - frontIdImage
+      - documentNameType
+      - documentNumber
+      - documentId
+    properties:
+      backIdImage:
+        type: string
+      frontIdImage: 
+        type: string
+      documentNameType:
+        type: string 
+      documentNumber:
+        type: integer
+      documentId: 
+        type: string
+      reason:
+        type: string 
+
+
+        
+  addSubAdmin:
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+      walletAddress:
+        type: string    
+      countryCode:
+        type: string
+      mobileNumber:
+        type: string
+      email:
+        type: string
+      address:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      country:
+        type: string
+      password:
+        type: string 
+      confirmPassword:
+        type: string
+      permission:
+        type: string
+
+    
+  editSubAdmin:
+    required:
+      -  _id
+    properties:
+      _id:
+        type: string
+      firstName:
+        type: string
+      countryCode:
+        type: string
+      mobileNumber:
+        type: string
+      email:
+        type: string
+      address:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      country:
+        type: string
+      password:
+        type: string 
+
+  changePassword:
+    required:
+      - oldPassword
+      - newPassword
+    properties:
+      oldPassword:
+        type: string
+      newPassword: 
+        type: string
+
+  spinPlayV1:
+    required:
+      - ipAddress
+    properties:
+      ipAddress:
+        type: string
+      allCategoryAndBid:
+       type: array
+       items:
+         type: object
+         properties:
+           gameCategoryId:
+            type: string
+           bidAmount:
+            type: number
+   
+  activeQuiz:
+    properties:
+      permissions:
+        type: array
+        items:
+          type: object
+          properties:
+            _id:
+              type: string
+            isActive:
+              type: boolean
+              default: true 
+  
+
+
+ 
+
+
+ 
